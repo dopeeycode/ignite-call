@@ -9,6 +9,7 @@
     "lint": "next lint --fix"
   },
   "dependencies": {
+    "@hookform/resolvers": "^3.3.4",
     "@ignite-ui/react": "^2.2.4",
     "@types/node": "20.11.20",
     "@types/react": "18.2.58",
@@ -19,7 +20,9 @@
     "phosphor-react": "^1.4.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "typescript": "5.3.3"
+    "react-hook-form": "^7.50.1",
+    "typescript": "5.3.3",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
     "@rocketseat/eslint-config": "^2.2.2"
