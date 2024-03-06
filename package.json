@@ -9,14 +9,19 @@
     "lint": "next lint --fix"
   },
   "dependencies": {
+    "@auth/prisma-adapter": "^1.5.0",
     "@hookform/resolvers": "^3.3.4",
     "@ignite-ui/react": "^2.2.4",
+    "@prisma/client": "^5.10.2",
     "@types/node": "20.11.20",
     "@types/react": "18.2.58",
     "@types/react-dom": "18.2.19",
+    "axios": "^1.6.7",
     "eslint": "8.57.0",
     "eslint-config-next": "14.1.0",
     "next": "14.1.0",
+    "next-auth": "^4.24.6",
+    "nookies": "^2.5.2",
     "phosphor-react": "^1.4.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -25,6 +30,8 @@
     "zod": "^3.22.4"
   },
   "devDependencies": {
-    "@rocketseat/eslint-config": "^2.2.2"
+    "@rocketseat/eslint-config": "^2.2.2",
+    "@types/cookies": "^0.9.0",
+    "prisma": "^5.10.2"
   }
 }
