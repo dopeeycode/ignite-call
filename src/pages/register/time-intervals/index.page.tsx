@@ -88,6 +88,7 @@ export default function TimeIntervals() {
 
               <S.IntervalInput>
                 <TextInput
+                  crossOrigin=""
                   size="sm"
                   type="time"
                   step={60}
@@ -95,6 +96,7 @@ export default function TimeIntervals() {
                   {...register(`intervals.${index}.startTime`)}
                 />
                 <TextInput
+                  crossOrigin=""
                   size="sm"
                   type="time"
                   step={60}
