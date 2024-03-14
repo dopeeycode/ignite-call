@@ -18,8 +18,10 @@ import {
 } from '../../../@zod-schemas/time-intervals-form-schema'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { api } from '../../../lib/axios'
+import { useRouter } from 'next/navigation'
 
 export default function TimeIntervals() {
+  const router = useRouter()
   const {
     register,
     handleSubmit,
@@ -56,6 +58,8 @@ export default function TimeIntervals() {
     await api.post('/users/time-intervals', {
       intervals,
     })
+
+    await router.push('/register/update-profile')
   }
 
   return (
