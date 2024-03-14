@@ -12,10 +12,12 @@ import { ArrowRight } from 'phosphor-react'
 import { Controller, useFieldArray, useForm } from 'react-hook-form'
 import { getWeekDays } from '../../../utils/get-week-days'
 import {
-  TimeIntervalsFormData,
+  TimeIntervalsFormOutput,
+  TimeIntervalsFormInput,
   timeIntervalsFormSchema,
 } from '../../../@zod-schemas/time-intervals-form-schema'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { api } from '../../../lib/axios'
 
 export default function TimeIntervals() {
   const {
@@ -24,7 +26,7 @@ export default function TimeIntervals() {
     control,
     watch,
     formState: { isSubmitting, errors },
-  } = useForm({
+  } = useForm<TimeIntervalsFormInput>({
     resolver: zodResolver(timeIntervalsFormSchema),
     defaultValues: {
       intervals: [
@@ -48,8 +50,12 @@ export default function TimeIntervals() {
 
   const weekDays = getWeekDays()
 
-  async function handleSetTimeIntervals({ intervals }: TimeIntervalsFormData) {
-    console.log(intervals)
+  async function handleSetTimeIntervals(data: unknown) {
+    const { intervals } = data as TimeIntervalsFormOutput
+
+    await api.post('/users/time-intervals', {
+      intervals,
+    })
   }
 
   return (
